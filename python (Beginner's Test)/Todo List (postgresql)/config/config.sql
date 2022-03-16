@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS TODO_LIST
+
+CREATE TABLE TODO_LIST (
+    ID SERIAL PRIMARY KEY,
+    LIST VARCHAR(500) NOT NULL
+)
+
+-- -- Inserting to the db
+-- INSERT INTO TODO_LIST(ID,LIST) VALUE ('ID','LIST')
+
+-- -- Deleting items
+-- DELETE FROM TODO_LIST WHERE ID = 'id'
+
+-- -- selecting items
+-- SELECT * FROM TODO_LIST
