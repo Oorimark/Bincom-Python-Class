@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+{% block title %} create {{data[0]}} list {% endblock %}
+
+{% block content %}
+    <form action="/addlist" method="POST">
+        <input type="text" name="list" id="">
+        <input type="hidden" name="todoName" value="{{}}">
+        <input type="submit" value="Add">
+    </form>
+    <div class="display">
+        <ul>
+
+        </ul>
+    </div>
+{% endblock %}
