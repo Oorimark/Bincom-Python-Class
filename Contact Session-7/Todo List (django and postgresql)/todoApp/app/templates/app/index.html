@@ -1,0 +1,22 @@
+{% extends "app/base.html" %}
+{% block title %} Todo List {% endblock %}
+
+
+{% block content %}
+<form action="/createtodo/" method="post">
+    {% csrf_token %}
+    <input type="text" name="todoName" id="" placeholder="Create todo" required>
+    <input type="submit" value="Create">
+</form>
+<div class="todo">
+    <h3>Created Todos</h3>
+    <div class="todo-container">
+        {% for i in todo %}
+            <div class="todo-display">
+                <a href="/createlist/{{i}}"><p>{{i}}</p></a>
+                <a href="/deletetodo/{{i}}"><i class="bi bi-x-lg"></i></a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %} 

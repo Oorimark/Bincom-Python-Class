@@ -1,0 +1,26 @@
+{% extends "app/base.html" %}
+{% block title %} create {{todoName}} list {% endblock %}
+
+{% block content %}
+
+
+    <form action="/addlist/" method="post">
+        <h3>Create {{todoName}} list</h3><br>
+        {% csrf_token %}
+        <input type="text" name="list" id="" required>
+        <input type="hidden" name="todoName" value="{{todoName}}">
+        <input type="submit" value="Add">
+    </form>
+    <div class="display">
+
+            {% for list in todolist %}
+                    <ul>
+                        <li>{{list}}</li>
+                        <a href="/deletelist/{{todoName}}/{{list.id}}"><i class="bi bi-x-lg"></i></a>
+                    </ul>
+            {% endfor %}
+
+
+    </div>
+
+{% endblock %}
